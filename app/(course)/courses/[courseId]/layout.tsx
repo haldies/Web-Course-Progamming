@@ -11,32 +11,37 @@ const CourseLayout = async ({
     params
 }: {
     children: React.ReactNode
-    params: { coursesId: string }
+    params: { courseId: string }
 }
 ) => {
+
     const { userId } = auth();
     if (!userId) {
         return redirect("/")
     }
 
+    if (!params.courseId) {
+        console.error("Course ID tidak terdefinisi");
+    }
+
     const course = await db.course.findUnique({
         where: {
-            id: params.coursesId
+            id: params.courseId
         },
         include: {
-            chapters:{
-                where:{
-                    isPublished:true,
+            chapters: {
+                where: {
+                    isPublished: true,
                 },
-                include:{
-                    userProgress:{
-                        where:{
+                include: {
+                    userProgress: {
+                        where: {
                             userId
                         }
                     }
                 },
-                orderBy:{
-                    position:"asc"
+                orderBy: {
+                    position: "asc"
                 }
             },
         }
@@ -51,19 +56,19 @@ const CourseLayout = async ({
         <div className="h-full">
             <div className="h-[80px] md:pl-80 fixed inset-y-0 w-full z-50">
                 <CourseNavbar
-                course={course}
-                progressCount={progressCount}
+                    course={course}
+                    progressCount={progressCount}
                 />
             </div>
             <div className="hidden md:flex h-full w-80 flex-col fixed inset-y-0 z-50">
                 <CourseSidebar
-                course={course}
-                progressCount={progressCount}
+                    course={course}
+                    progressCount={progressCount}
                 />
             </div>
-            <main className="md:pl-80 md:pt-36 h-full">
+            <main className="md:pl-80 pt-[80px] h-full">
                 {children}
-            </main>    
+            </main>
         </div>
     )
 
