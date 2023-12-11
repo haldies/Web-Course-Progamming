@@ -56,6 +56,6 @@
     "zustand": "^4.4.7"
   },
   "devDependencies": {
-    "prima": "^0.0.1"
+    "prisma": "^5.7.0"
   }
 }
