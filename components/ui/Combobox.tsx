@@ -17,7 +17,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-import { on } from "events"
+
 
 interface ComboboxProps {
     options: { label : string, value: string }[];
@@ -27,13 +27,11 @@ interface ComboboxProps {
 
 
 export const Combobox =({
-
     options,
     value,
     onChange
 
 }: ComboboxProps ) => {
-
   const [open, setOpen] = React.useState(false)
 
   return (

@@ -26,9 +26,6 @@ import { Pencil } from "lucide-react";
 import { Combobox } from "@/components/ui/Combobox";
 
 
-
-
-
 interface CategoryFormProps {
     initialData: Course;
     courseId: string;
@@ -113,9 +110,8 @@ export const CategoryForm = ({
                                 <FormItem>
                                     <FormControl>
                                         <Combobox
-                                            options={...options}
+                                            options={options}
                                             {...field}
-
                                         />
                                     </FormControl>
                                     <FormMessage />
