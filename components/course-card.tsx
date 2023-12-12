@@ -3,6 +3,7 @@ import Link from "next/link";
 import { IconBadge } from "@/components/icon-badge";
 import { BookOpen } from "lucide-react";
 import { formatPrice } from "@/lib/format";
+import { CourseProgress } from "@/components/course-progress";
 
 
 
@@ -54,7 +55,12 @@ export const CourseCard = ({
                     </div>
                     {progress !== null ? (
                         <div>
-                            todo progress
+                            <CourseProgress
+                            variant={progress === 100 ? "success" : "default"}
+                            size="sm"
+                            value={progress}
+
+                            />
                         </div>
                    
                     ) : (

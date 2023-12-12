@@ -4,6 +4,7 @@ import { auth } from "@clerk/nextjs";
 import { db } from "@/lib/db"
 
 
+
 const { Video } = new Mux(
     process.env.MUX_TOKEN_ID!,
     process.env.MUX_TOKEN_SECRET!,
@@ -16,7 +17,8 @@ export async function DELETE(
 ) {
     try {
         const { userId } = auth();
-        if (!userId) {
+
+        if (!userId ) {
             return new NextResponse("unauthorized", { status: 401 })
         }
 
@@ -68,7 +70,7 @@ export async function PATCH(
         const { courseId } = params;
         const values = await req.json();
 
-        if (!userId) {
+        if (!userId ) {
             return new NextResponse("unauthorized", { status: 401 })
         }
 
