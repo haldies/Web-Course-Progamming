@@ -11,7 +11,6 @@ const AuthLayout = ({
             {children}
         </div>
 
-
     );
 
 

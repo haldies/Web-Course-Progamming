@@ -43,7 +43,7 @@ export const SearchInput = () => {
             <Input
             onChange={(e)=> setValue(e.target.value)}
                 value={value}
-                className="w-full md:w-[300px] pl-9 rounded-full bg-slate-100 fokus-visible:ring-slate-200"
+                className="w-full md:w-[300px] border-2 border-gray-950 pl-9 rounded-full bg-slate-100 fokus-visible:ring-slate-200"
                 placeholder="Search for a course"
             />
         </div>

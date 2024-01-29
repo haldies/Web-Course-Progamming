@@ -4,10 +4,9 @@ import { Logo } from "./logo";
 import { SidebarRoutes } from "./sidebar-routes";
 export const Sidebar = () => {
     return ( 
-        <div className="h-full border-r flex flex-col overflow-y-auto bg-white shadow-sm">
-            <div className="p-6">
+        <div className="h-full border-r flex flex-col overflow-y-auto bg-white shadow-sm border-2 border-r-slate-300">
+            <div className="p-6 flex items-center  justify-start">
                 <Logo/>
-
             </div>
             <div className="flex flex-col w-full">
                 <SidebarRoutes/>
